@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+   --font-music-player: "Lato", sans-serif;      
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--font-music-player);
+    background-image: linear-gradiente(
+        0deg,
+        rgba(247, 247, 247, 1) 23.8%,
+        rgba(252, 221, 221, 1) 92%
+    );
+    display: flex;
+}
