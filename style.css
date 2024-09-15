@@ -22,4 +22,33 @@ body {
         rgba(252, 221, 221, 1) 92%
     );
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-player-cont {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 0;
+    margin-left: 0;
+    z-index: 10;
+}
+
+.image-container {
+    position: relative;
+    width: 110px;
+}
+
+.image-container img {
+    
 }
