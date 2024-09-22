@@ -38,8 +38,6 @@ h4#songTitle {
     margin-bottom: 1.33em;
 }
 
-/*
-
 .music-player-cont {
     background-color: white;
     border-radius: 15px;
@@ -99,4 +97,15 @@ h4#songTitle {
     }
 }
 
-*/
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index; 1;
+}
+
+.action-btn {
+    background-color: #fff;
+    border: 0;
+    color: #dfdbdf;
+}
