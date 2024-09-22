@@ -56,3 +56,32 @@ function pauseSong() {
     audio.pause();
 };
 
+function prevSong() {
+   songIndex - 1 < 0 ? songIndex = songs.length - 1 : songIndex--;
+   loadSong(songs[songIndex]);
+   playSong();  
+}
+
+function nextSong() {
+   songIndex + 1 === songs.length ? songIndex = 0 : songIndex++;
+   loadSong(songs[songIndex]);
+   playSong();  
+}
+
+function updateProgress(e) {
+
+}
+
+//Change Song to Previous
+prevButton.addEventListener("click", () => {
+    prevSong();
+});
+
+//Change Song to Previous
+nextButton.addEventListener("click", () => {
+    nextSong();
+});
+
+audio.addEventListener("timeupdate", () => {
+    updateProgress();
+});
