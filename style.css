@@ -33,11 +33,6 @@ h1#title {
     margin-bottom: 0.67em;
 }
 
-h4#songTitle {
-    margin-top: 1.33em;
-    margin-bottom: 1.33em;
-}
-
 .music-player-cont {
     background-color: white;
     border-radius: 15px;
@@ -140,6 +135,7 @@ h4#songTitle {
     width: calc(100% - 40px);
     opacity: 0;
     transform: translateY(0%);
+    transition: transform 0.3s ease-in opacity 0.3s ease-in;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -149,5 +145,21 @@ h4#songTitle {
 .music-player-cont.play .musicInfo {
     opacity: 1;
     transform: translateY(-100%);
+}
+
+.musicInfo > h4#songTitle {
+    margin: 0;
+}
+
+.progress-container {
+    background-color: #fff;
+    border-radius: 5px;
+    curson: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-right: 0;
+    height: 4px;
+    width: 100%;
 }
 
