@@ -8,6 +8,7 @@ const progressBar = document.querySelector(".progress-bar");
 const title = document.getElementById("songTitle");
 const artist = document.getElementById("songArtist");
 const cover = document.getElementById("cover");
+//const durTime = document.getElementById("durTime");
 
 const BoulevarBrokenDreams = new Song("Boulevard of Broken Dreams", "Green Day", "BoulevardOfBrokenDreams" ,"Boulevard_of_Broken_Dreams.jpg");
 const BlackHoleSun = new Song("Black Hole Sun", "SoundGarden", "BlackHoleSun", "Black_Hole_Sun.jpg");
