@@ -69,7 +69,17 @@ function nextSong() {
 }
 
 function updateProgress(e) {
+    const { duration, currentTime } = e.srcElement;
+    const progressPercentage = (currentTime / duration) * 100;
+    progressBar.style.width = `${String(progressPercentage)}%`;
+}
 
+function setProgress(e, width) {
+    const clickPosition = e.offsetX;
+    console.log(clickPosition);
+    const duration = audio.duration;
+    console.log(audio.duration);
+    audio.currentTime = (clickPosition / width) * duration;
 }
 
 //Change Song to Previous
@@ -82,6 +92,10 @@ nextButton.addEventListener("click", () => {
     nextSong();
 });
 
-audio.addEventListener("timeupdate", () => {
-    updateProgress();
+audio.addEventListener("timeupdate", (e) => {
+    updateProgress(e);
+});
+
+progressContainer.addEventListener("click", function(e) {
+    setProgress(e, this.clientWidth);
 });
