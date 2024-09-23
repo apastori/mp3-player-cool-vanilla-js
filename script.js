@@ -82,6 +82,34 @@ function setProgress(e, width) {
     audio.currentTime = (clickPosition / width) * duration;
 }
 
+function getMinutes(currentTime) {
+    let minutes = !currentTime ? 0 : Math.floor(currentTime / 60);
+    return minutes < 10 ? "0" + String(minutes) : String(minutes);    
+}
+
+function getSeconds(currentTime) {
+    if (Math.floor(currentTime < 60)) {
+        let secPrev = Math.floor(currentTime);
+        return secPrev < 10 ? "0" + String(secPrev) : String(secPrev);
+    }
+    for (let i = 1; i <= 60; i++) {
+        if(Math.floor(currentTime) >= (60 * i) && Math.floor(currentTime) < (60 * ( i + 1))) {
+            let secPrev = Math.floor(currentTime) - ( 60 * i);
+            return secPrev < 10 ? "0" + String(secPrev) : String(secPrev);
+        }
+    }
+}
+
+function durTime(e, width) {
+    const { duration, currentTime } = e.srcElement;
+    var sec;
+    var sec_d;
+    // Get Minutes
+    let minutes = getMinutes(currentTime);
+    // Get Seconds
+    let seconds = getSeconds(currentTime);
+}
+
 //Change Song to Previous
 prevButton.addEventListener("click", () => {
     prevSong();
@@ -92,10 +120,15 @@ nextButton.addEventListener("click", () => {
     nextSong();
 });
 
-audio.addEventListener("timeupdate", (e) => {
+audio.addEventListener("timeupdate", function(e) {
     updateProgress(e);
+    durTime(e, this.clientWidth);
 });
 
 progressContainer.addEventListener("click", function(e) {
     setProgress(e, this.clientWidth);
 });
+
+audio.addEventListener("ended", () => {
+    nextSong();
+})
